@@ -6,6 +6,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user.models';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 import { ModelstoreService } from '../services/modelstore.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private userService: UserService,
-    private modelStore: ModelstoreService
+    private modelStore: ModelstoreService,
+    private router: Router,
   ) {}
 
   login() {
@@ -39,5 +41,9 @@ export class LoginComponent {
         return of(null); // or handle error appropriately
       })
     ).subscribe();
+  }
+
+  redirectToSignup() {
+    this.router.navigate(["/signup"])
   }
 }

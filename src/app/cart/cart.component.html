@@ -1,0 +1,12 @@
+<div class="cart">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+  </div>
+  <div class="cart-content">
+    <div *ngFor="let item of cartItems" class="item">
+      {{ item["name"] }} - Price: {{ item["price"] }} - Quantity:
+      {{ item["quantity"] }}
+    </div>
+    <div class="item">Total Price: {{ cartService.getToatlPrice() }}</div>
+  </div>
+</div>

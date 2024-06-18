@@ -1,20 +1,35 @@
 <!-- src/app/login/login.component.html -->
 
 <div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="login()" class="form-container">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" [(ngModel)]="username" name="username" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
+  <h2>Login</h2>
+  <form (ngSubmit)="login()" class="form-container">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        required
+      />
     </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <div class="signup">
+    <p>Not a registered user?</p>
+    <a (click)="redirectToSignup()">Sign up</a>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
 </div>
-  

@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="page">
+  <app-top-nav-bar></app-top-nav-bar>
+  <div *ngIf="!cartService.getCartOpenStatus()" class="cart-items">
+    <app-cart></app-cart>
+  </div>
+  <div class="products">
+    <h1>Product List</h1>
+    <div class="product-list">
+      <div *ngFor="let product of products" class="product-card">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p class="price">Price: ${{ product.price }}</p>
+        <button class="add-to-cart-btn" (click)="addToCart(product)">
+          <fa-icon [icon]="faShoppingCart"></fa-icon> Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

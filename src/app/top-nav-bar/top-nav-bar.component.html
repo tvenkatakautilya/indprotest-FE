@@ -1,0 +1,18 @@
+<div class="top-nav-bar">
+  <div class="logo">My E-Commerce</div>
+  <div class="menu">
+    <span>Welcome, {{ authService.getUsername() }}</span>
+    <a routerLink="/home">
+      <fa-icon [icon]="faHouse"></fa-icon>
+      Home
+    </a>
+    <a (click)="cartService.toggelCart()">
+      <fa-icon [icon]="faShoppingCart"></fa-icon>
+      Cart
+    </a>
+    <a (click)="authService.logout()">
+      <fa-icon [icon]="faRightFromBracket"></fa-icon>
+      Logout
+    </a>
+  </div>
+</div>
