@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getProducts().subscribe((products: Product[]) => {
       this.products = products;
+      localStorage.setItem('products', JSON.stringify(this.products))
     });
   }
 
