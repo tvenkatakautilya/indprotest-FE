@@ -8,5 +8,8 @@
       {{ item["quantity"] }}
     </div>
     <div class="item">Total Price: {{ cartService.getToatlPrice() }}</div>
+    <button (click)="placeOrder()">Place Order</button>
+    <span *ngIf="message.length !== 0">{{ message }}</span>
+    <span *ngIf="errorMessage.length !== 0">{{ errorMessage }}</span>
   </div>
 </div>
